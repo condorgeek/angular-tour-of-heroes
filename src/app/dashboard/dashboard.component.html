@@ -1,7 +1,32 @@
-<h2>Top Heroes</h2>
 <div class="heroes-menu">
-  <a *ngFor="let hero of heroes" routerLink="/detail/{{ hero.id }}">
-    {{ hero.name }}
-  </a>
+  <h1>Top Heroes</h1>
+  <app-hero-search></app-hero-search>
 </div>
-<app-hero-search></app-hero-search>
+
+<div class="heroes-container">
+  <div *ngFor="let hero of heroes">
+    <mat-card class="heroes-card">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>{{ hero.name }}</mat-card-title>
+        <mat-card-subtitle>Marvel Hero</mat-card-subtitle>
+      </mat-card-header>
+      <img
+        mat-card-image
+        src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+        alt="Photo of a Shiba Inu"
+      />
+      <mat-card-content>
+        <p>
+          The Shiba Inu is the smallest of the six original and distinct spitz
+          breeds of dog from Japan. A small, agile dog that copes very well with
+          mountainous terrain, the Shiba Inu was originally bred for hunting.
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>LIKE</button>
+        <a routerLink="/detail/{{ hero.id }}"> DETAILS </a>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

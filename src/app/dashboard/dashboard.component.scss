@@ -1,12 +1,22 @@
 .heroes-menu {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
 }
 
-a {
-  padding: 30px 20px;
-  background-color: cornflowerblue;
-  color: white;
-  margin-right: 10px;
-  text-decoration: none;
+.heroes-container {
+  display: flex;
+  justify-content: space-between;
 }
+
+.heroes-card {
+  min-width: 180px;
+  padding: 10px;
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+
