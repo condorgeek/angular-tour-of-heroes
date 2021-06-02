@@ -25,6 +25,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { VideoComponent } from './video/video.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     DashboardComponent,
     HeroSearchComponent,
     NavigationComponent,
+    VideoComponent,
   ],
   imports: [
     BrowserModule,
