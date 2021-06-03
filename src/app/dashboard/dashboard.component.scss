@@ -30,7 +30,14 @@
   position: absolute;
   bottom: 25%;
   left: 5%;
-  font-size: 4em;
-  color: red;
+
+  .dashboard-text {
+    background-color: black;
+    font-size: 4em;
+    padding: 0 24px;
+    color: red;
+  }
 }
+
+
 
