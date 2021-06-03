@@ -7,16 +7,19 @@
 
 .heroes-container {
   display: flex;
-  justify-content: space-between;
+  align-content: space-between;
+  align-items: center;
+  //flex-direction: row;
+  //flex-wrap: wrap;
 }
 
 .heroes-card {
   min-width: 180px;
-  margin: 2px;
+  max-width: 360px;
+  margin: 4px;
 }
 
-.example-header-image {
-  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-  background-size: cover;
+.avatar-image {
+  object-fit: cover;
 }
 

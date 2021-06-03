@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { Hero } from '../hero';
 import { ActivatedRoute } from '@angular/router';
 import { HeroService } from '../hero.service';
@@ -11,6 +11,7 @@ import { Location } from '@angular/common';
 })
 export class HeroDetailComponent implements OnInit {
   @Input() hero?: Hero;
+  @ViewChild('heroName', { static: true }) heroName: any;
 
   constructor(
     private route: ActivatedRoute,
@@ -20,6 +21,7 @@ export class HeroDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.getHero();
+    this.heroName.nativeElement.focus();
   }
 
   getHero(): void {

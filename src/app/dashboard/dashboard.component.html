@@ -3,11 +3,20 @@
   <app-hero-search></app-hero-search>
 </div>
 
+<div class="dashboard-opener">
+  <img class="opener-img" src="/assets/{{ openerImg }}" />
+  <span class="dashboard-overlay">Marvel Heroes</span>
+</div>
+
 <div class="heroes-container">
   <div *ngFor="let hero of heroes">
     <mat-card class="heroes-card">
       <mat-card-header>
-        <div mat-card-avatar class="example-header-image"></div>
+        <img
+          mat-card-avatar
+          class="avatar-image"
+          src="/assets/{{ hero.image }}"
+        />
         <mat-card-title>{{ hero.name }}</mat-card-title>
         <mat-card-subtitle>Marvel Hero</mat-card-subtitle>
       </mat-card-header>
@@ -31,4 +40,4 @@
     </mat-card>
   </div>
 </div>
-<app-video></app-video>
+<!--<app-video></app-video>-->

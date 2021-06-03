@@ -1,11 +1,48 @@
-<div *ngIf="hero">
-  <h2>{{ hero.name | uppercase }} Details</h2>
-  <div><span>id: </span>{{ hero.id }}</div>
-  <div>
-    <label for="hero-name">Hero name: </label>
-    <input id="hero-name" [(ngModel)]="hero.name" placeholder="name" />
+<!--<input-->
+<!--  matInput-->
+<!--  autofocus-->
+<!--  id="hero-name"-->
+<!--  [(ngModel)]="hero.name"-->
+<!--  value="{{ hero.name }}"-->
+<!--  placeholder="Hero name"-->
+<!--  #heroName-->
+<!--/>-->
+
+<div class="hero-detail-container">
+  <div *ngIf="hero">
+    <div class="dashboard-opener">
+      <img class="opener-img" src="/assets/{{ hero.image }}" />
+      <span class="dashboard-overlay">{{ hero.name }}</span>
+    </div>
+
+    <div class="hero-detail-body">
+      <div>
+        <b><span>Hero Id: </span>{{ hero.id }}</b>
+      </div>
+      <form class="hero-detail-form">
+        <mat-form-field class="hero-detail-field">
+          <mat-label>Update Hero name</mat-label>
+          <input
+            matInput
+            autofocus
+            id="hero-name"
+            value="{{ hero.name }}"
+            placeholder="Hero name"
+            #heroName
+          />
+          <mat-hint align="start"
+            ><strong>Enter new Hero name</strong>
+          </mat-hint>
+        </mat-form-field>
+        <div class="hero-detail-footer">
+          <button mat-stroked-button (click)="goBack()">go back</button>
+          <button mat-raised-button color="primary" (click)="save()">
+            save
+          </button>
+        </div>
+      </form>
+    </div>
   </div>
 </div>
 
-<button (click)="goBack()">go back</button>
-<button (click)="save()">save</button>
+<app-video></app-video>

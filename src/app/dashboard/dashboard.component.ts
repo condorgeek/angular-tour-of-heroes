@@ -10,6 +10,7 @@ import { HeroService } from '../hero.service';
 })
 export class DashboardComponent implements OnInit {
   heroes: Hero[] = [];
+  openerImg: string = 'video-opener.png';
 
   constructor(private heroService: HeroService) {}
 
