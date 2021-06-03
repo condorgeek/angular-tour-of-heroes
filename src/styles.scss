@@ -22,14 +22,7 @@ html, body { height: 100%; }
   }
 }
 
-.dashboard-overlay {
-  z-index: 100;
-  position: absolute;
-  bottom: 25%;
-  right: 10%;
-  font-size: 4em;
-  color: white;
-}
+
 
 .mt-1 {
   margin-top: 10px;
@@ -52,7 +45,7 @@ html, body { height: 100%; }
 }
 
 .ml-1 {
-  margin-left: 4px;
+  margin-left: 8px;
 }
 
 .ml-2 {

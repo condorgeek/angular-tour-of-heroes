@@ -22,6 +22,7 @@ export class MessageService {
     this.matSnackBar.open(message, action, {
       duration: 3000,
       horizontalPosition: 'right',
+      verticalPosition: 'bottom',
     });
   }
 }

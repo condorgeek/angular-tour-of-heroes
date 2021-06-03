@@ -9,8 +9,6 @@
   display: flex;
   align-content: space-between;
   align-items: center;
-  //flex-direction: row;
-  //flex-wrap: wrap;
 }
 
 .heroes-card {
@@ -25,5 +23,14 @@
 
 .avatar-image {
   object-fit: cover;
+}
+
+.dashboard-overlay {
+  z-index: 100;
+  position: absolute;
+  bottom: 25%;
+  left: 5%;
+  font-size: 4em;
+  color: red;
 }
 

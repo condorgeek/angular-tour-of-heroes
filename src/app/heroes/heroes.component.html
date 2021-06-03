@@ -1,17 +1,25 @@
-<!--<ul class="heroes">-->
-<!--  <li-->
-<!--    *ngFor="let hero of heroes"-->
-<!--    [class.selected]="hero === selectedHero"-->
-<!--    (click)="onSelect(hero)"-->
-<!--  >-->
-<!--    <a routerLink="/detail/{{ hero.id }}">-->
-<!--      <span class="badge">{{ hero.id }}</span> {{ hero.name }}-->
-<!--    </a>-->
-<!--    <button class="delete" title="delete hero" (click)="delete(hero)">x</button>-->
-<!--  </li>-->
-<!--</ul>-->
+<div class="heroes-menu mt-2">
+  <h2>List of Heroes</h2>
+  <div>
+    <mat-form-field>
+      <mat-label>New Hero</mat-label>
+      <input matInput id="new-hero" #heroName />
+      <mat-icon matSuffix>add</mat-icon>
+      <mat-hint>Start typing Hero name</mat-hint>
+    </mat-form-field>
+    <span class="ml-2">
+      <button
+        mat-raised-button
+        color="primary"
+        (click)="add(heroName.value); heroName.value = ''"
+      >
+        Add hero
+      </button>
+    </span>
+  </div>
+  <app-hero-search></app-hero-search>
+</div>
 
-<h1 class="mt-3">List of Heroes</h1>
 <div class="heroes-container">
   <div
     *ngFor="let hero of heroes"
@@ -33,20 +41,11 @@
       <mat-card-actions>
         <button mat-icon-button title="delete hero" (click)="delete(hero)">
           <mat-icon color="primary" aria-label="Side nav toggle icon"
-            >delete</mat-icon
-          >
+            >delete
+          </mat-icon>
         </button>
         <a class="ml-1" routerLink="/detail/{{ hero.id }}"> DETAILS </a>
       </mat-card-actions>
     </mat-card>
   </div>
-</div>
-
-<div>
-  <h2>Add a Hero</h2>
-  <label for="new-hero">Hero name: </label>
-  <input id="new-hero" #heroName />
-  <button class="add-button" (click)="add(heroName.value); heroName.value = ''">
-    Add hero
-  </button>
 </div>

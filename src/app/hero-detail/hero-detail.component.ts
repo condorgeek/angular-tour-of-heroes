@@ -11,7 +11,6 @@ import { Location } from '@angular/common';
 })
 export class HeroDetailComponent implements OnInit {
   @Input() hero?: Hero;
-  @ViewChild('heroName', { static: true }) heroName: any;
 
   constructor(
     private route: ActivatedRoute,
@@ -21,7 +20,6 @@ export class HeroDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.getHero();
-    this.heroName.nativeElement.focus();
   }
 
   getHero(): void {

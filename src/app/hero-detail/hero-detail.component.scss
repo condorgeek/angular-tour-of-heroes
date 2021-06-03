@@ -50,3 +50,12 @@
   width: 50%;
 }
 
+.details-overlay {
+  z-index: 100;
+  position: absolute;
+  bottom: 25%;
+  right: 10%;
+  font-size: 4em;
+  color: white;
+}
+

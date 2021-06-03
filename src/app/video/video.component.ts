@@ -7,16 +7,17 @@ import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
 })
 export class VideoComponent implements OnInit {
   // @ts-ignore
-  @ViewChild('videoPlayer', { static: false }) videoplayer: ElementRef;
+  @ViewChild('videoPlayer', { static: false }) videoPlayer: ElementRef;
   videoSource: string = 'https://vjs.zencdn.net/v/oceans.mp4';
-  videoPoster = '/assets/video-opener.png';
+  // videoPoster = '/assets/video-opener.png';
+  videoPoster = '';
 
   constructor() {}
 
   ngOnInit(): void {}
 
   toggleVideo(event?: any) {
-    this.videoplayer.nativeElement.play();
+    this.videoPlayer.nativeElement.play();
   }
 
   skip(value: any) {
