@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
+import { Component, ViewChild, ElementRef, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-video',
@@ -12,6 +12,8 @@ export class VideoComponent implements OnInit {
   // videoPoster = '/assets/video-opener.png';
   videoPoster = '';
 
+  @Input() description!: string;
+
   constructor() {}
 
   ngOnInit(): void {}
@@ -21,12 +23,12 @@ export class VideoComponent implements OnInit {
   }
 
   skip(value: any) {
-    let video: any = document.getElementById('my_video_1');
+    let video: any = document.getElementById('video-id');
     video.currentTime += value;
   }
 
   restart() {
-    let video: any = document.getElementById('my_video_1');
+    let video: any = document.getElementById('video-id');
     video.currentTime = 0;
   }
 }

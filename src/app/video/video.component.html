@@ -1,28 +1,6 @@
-<!--<div id="instructions">-->
-<!--  <video-->
-<!--    id="my_video_1"-->
-<!--    class="video-js vjs-default-skin"-->
-<!--    width="640px"-->
-<!--    height="267px"-->
-<!--    controls-->
-<!--    preload="none"-->
-<!--    poster="http://video-js.zencoder.com/oceans-clip.jpg"-->
-<!--    data-setup='{ "aspectRatio":"640:267", "playbackRates": [1, 1.5, 2] }'-->
-<!--  >-->
-<!--    <source src="https://vjs.zencdn.net/v/oceans.mp4" type="video/mp4" />-->
-<!--    <source src="https://vjs.zencdn.net/v/oceans.webm" type="video/webm" />-->
-<!--  </video>-->
-<!--  <button (click)="playPause()">Play/Pause</button>-->
-<!--  <button (click)="makeBig()">Big</button>-->
-<!--  <button (click)="makeSmall()">Small</button>-->
-<!--  <button (click)="makeNormal()">Normal</button>-->
-<!--  <button (click)="restart()">Restart</button>-->
-<!--  <button (click)="skip(-10)">Rewind</button>-->
-<!--  <button (click)="skip(10)">Fastforward</button>-->
-<!--</div>-->
-
 <div class="video-container">
   <video
+    id="video-id"
     width="75%"
     poster="{{ videoPoster }}"
     data-setup='{ aspectRatio:"16:9", playbackRates: [1, 1.5, 2] }'
@@ -33,4 +11,16 @@
     <source src="{{ videoSource }}" type="video/mp4" />
     Browser not supported
   </video>
+  <div class="video-text fix-to-bottom">
+    {{ description }}
+
+    <div class="menu-flex-box mt-2">
+      <button mat-fab color="primary" (click)="skip(-10)">
+        <mat-icon>replay_10</mat-icon>
+      </button>
+      <button mat-fab color="primary" (click)="skip(10)">
+        <mat-icon>forward_10 </mat-icon>
+      </button>
+    </div>
+  </div>
 </div>

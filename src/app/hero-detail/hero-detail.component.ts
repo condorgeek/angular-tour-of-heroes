@@ -11,6 +11,12 @@ import { Location } from '@angular/common';
 })
 export class HeroDetailComponent implements OnInit {
   @Input() hero?: Hero;
+  // expand Hero to include a short description
+  shortDescription: string =
+    ' Wanda Maximoff aimed her anger and grief over loss of her parents at Tony' +
+    ' Stark, which drove her to HYDRA—where she gained powers—which drove her' +
+    ' further to Ultron, where she gained perspective. Seeing the error of her ways,' +
+    ' Wanda switched sides.';
 
   constructor(
     private route: ActivatedRoute,

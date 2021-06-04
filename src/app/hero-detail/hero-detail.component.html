@@ -14,35 +14,82 @@
       <img class="opener-img" src="/assets/{{ hero.image }}" />
       <span class="details-overlay">{{ hero.name }}</span>
     </div>
-
     <div class="hero-detail-body">
-      <div>
-        <b><span>Hero Id: </span>{{ hero.id }}</b>
-      </div>
-      <form class="hero-detail-form">
-        <mat-form-field class="hero-detail-field">
-          <mat-label>Update Hero name</mat-label>
-          <input
-            matInput
-            autofocus
-            id="hero-name"
-            value="{{ hero.name }}"
-            placeholder="Hero name"
-            #heroName
-          />
-          <mat-hint align="start"
-            ><strong>Enter new Hero name</strong>
-          </mat-hint>
-        </mat-form-field>
+      <div class="menu-flex-box mt-2">
+        <h2>Heroe Details</h2>
+        <div>
+          <b><span>Hero Id: </span>{{ hero.id }}</b>
+        </div>
+        <form class="hero-detail-form">
+          <mat-form-field class="hero-detail-field">
+            <mat-label>Update Hero name</mat-label>
+            <input
+              matInput
+              autofocus
+              id="hero-name"
+              value="{{ hero.name }}"
+              placeholder="Hero name"
+              #heroName
+            />
+            <mat-icon matSuffix>edit</mat-icon>
+            <mat-hint align="start"
+              ><strong>Enter new Hero name</strong>
+            </mat-hint>
+          </mat-form-field>
+        </form>
         <div class="hero-detail-footer">
           <button mat-stroked-button (click)="goBack()">go back</button>
           <button mat-raised-button color="primary" (click)="save()">
             save
           </button>
         </div>
-      </form>
+      </div>
     </div>
   </div>
-</div>
 
-<app-video></app-video>
+  <h2 class="mt-3">Biography</h2>
+  <mat-grid-list cols="4" rowHeight="1.5:1">
+    <mat-grid-tile colspan="1">
+      <h4><b>Awakening the Witch</b></h4>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="3">
+      <span>
+        Sokovian native Wanda Maximoff and her twin brother Pietro survived an
+        explosion in their apartment building that killed both of their parents.
+        Another missile landed, but did not explode. It terrorized them for days
+        as they remained stuck in the rubble, with the deadly device in front of
+        them, the name Stark emblazed on its side. Years later, they both
+        volunteered to undergo genetic experimentation overseen by HYDRA’s Baron
+        Wolfgang von Strucker, using Loki’s scepter, to potentially give them
+        powers. One of the few survivors of the experiments, along with her
+        brother, Wanda found herself with a variety of abilities. Alongside
+        Pietro, Wanda went on to use these abilities to help the robot Ultron,
+        who shared her disdain for Tony Stark. However, when she and Pietro
+        discovered the true nature of Ultron’s plans, they switched allegiances
+        and joined the fight against him, putting Wanda on the path to become an
+        Avenger.
+      </span>
+    </mat-grid-tile>
+
+    <mat-grid-tile colspan="1">
+      <h4><b>Avenging Friends</b></h4>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="3">
+      <span
+        >As she becomes an Avenger, Wanda Maximoff develops a good relationship
+        with many in the Super Hero community. Her first and foremost ally is
+        her twin brother, Pietro Maximoff, who stands by and tries to protect
+        her in the wake of their parents’ death. After gaining powers from Baron
+        von Strucker, the Maximoff twins ally themselves with Ultron before
+        fully understanding his villainous plans. Wanda, along with Pietro,
+        switches sides and works with the Avengers, fighting alongside Captain
+        America, Thor, Hulk, Black Widow, Iron Man to oppose the mechanical
+        monster. She is particularly inspired by Hawkeye, who sees a lot of
+        potential in her and becomes a mentor to her. She grieves deeply when
+        Pietro perishes in the fight against Ultron.
+      </span>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <h2 class="mt-3">Media Preview</h2>
+  <app-video [description]="shortDescription"></app-video>
+</div>

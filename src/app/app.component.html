@@ -1,33 +1,45 @@
-<div class="app-container mat-app-background">
-  <mat-toolbar color="primary">
-    <button
-      mat-icon-button
-      class="example-icon"
-      aria-label="Example icon-button with menu icon"
-    >
-      <mat-icon>menu</mat-icon>
-    </button>
-    <span>{{ title }}</span>
-    <span class="example-spacer"></span>
+<mat-drawer-container class="sidenav-container mat-app-background" autosize>
+  <mat-drawer #drawer class="sidenav" mode="side">
+    <div class="mb-4">
+      <button class="right" mat-icon-button aria-label="Close side navigation">
+        <mat-icon (click)="drawer.toggle()">close</mat-icon>
+      </button>
+    </div>
 
-    <a routerLink="/dashboard">Dashboard</a>
-    <a routerLink="/heroes">Heroes</a>
-    <button
-      mat-icon-button
-      class="example-icon favorite-icon"
-      aria-label="Example icon-button with heart icon"
-    >
-      <mat-icon>favorite</mat-icon>
-    </button>
-    <button
-      mat-icon-button
-      class="example-icon"
-      aria-label="Example icon-button with share icon"
-    >
-      <mat-icon>share</mat-icon>
-    </button>
-  </mat-toolbar>
+    <mat-nav-list>
+      <mat-list-item>
+        <a routerLink="/dashboard">Dashboard</a>
+        <mat-icon matListIcon>chevron_right</mat-icon>
+      </mat-list-item>
+      <mat-list-item>
+        <a routerLink="/heroes">Heroes</a>
+        <mat-icon matListIcon>chevron_right</mat-icon>
+      </mat-list-item>
+    </mat-nav-list>
+    <mat-divider></mat-divider>
+    <div class="sidenav-copy">
+      2021, Angular (Material UI) Demo App by Marcelo Krebber
+    </div>
+  </mat-drawer>
+  <div class="app-container mat-app-background">
+    <mat-toolbar color="primary">
+      <button mat-icon-button aria-label="Toggle side navigation">
+        <mat-icon (click)="drawer.toggle()">menu</mat-icon>
+      </button>
+      <span>{{ title }}</span>
+      <span class="align-right"></span>
+      <mat-nav-list>
+        <a class="nav-link" routerLink="/dashboard">Dashboard</a>
+        <a class="nav-link" routerLink="/heroes">Heroes</a>
+      </mat-nav-list>
+      <button mat-icon-button aria-label="Favorites button">
+        <mat-icon>favorite</mat-icon>
+      </button>
+      <button mat-icon-button aria-label="share button">
+        <mat-icon>share</mat-icon>
+      </button>
+    </mat-toolbar>
 
-  <router-outlet></router-outlet>
-  <!--  <app-messages></app-messages>-->
-</div>
+    <router-outlet></router-outlet>
+  </div>
+</mat-drawer-container>
